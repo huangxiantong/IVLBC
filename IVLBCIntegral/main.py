@@ -17,7 +17,7 @@ if __name__ == "__main__":
     print("%d / %d" % (ACTIVEBITS, 64))
     IVLBC1.set_constant_bits(constant_bits)
     IVLBC1.MakeModel()
-    a=IVLBC1.solve_model()
+    IVLBC1.solve_model()
 
 
 
