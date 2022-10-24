@@ -258,9 +258,7 @@ class IVLBC:
             m.remove(temporary_constraints)
             m.update()
         fileobj = open(self.filename_result, "a")
-        bb = 0
         if balanced_flag:
-            bb = 1
             fileobj.write("Indices of constant bits : %s\n" %
                           ",".join(map(str, self.constant_bits)))
             fileobj.write("Integral distinguisher found :)\n")
@@ -271,7 +269,6 @@ class IVLBC:
             fileobj.write("Indices of constant bits : %s\n" %
                           ",".join(map(str, self.constant_bits)))
             fileobj.write("Integral distinguisher doesn't exist :(\n")
-            bb = 0
             print("\nIndices of constant bits : %s" %
                   ",".join(map(str, self.constant_bits)))
             print("Integral distinguisher doesn't exist :(")
@@ -284,7 +281,6 @@ class IVLBC:
         fileobj.write("\nTime used = %.2f\n\n" % elapsed_time)
         print("Time used = %.2f\n" % elapsed_time)
         fileobj.close()
-        return bb
 
     def WriteObjective(self, obj):
             """
